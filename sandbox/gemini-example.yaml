@@ -1,0 +1,10 @@
+name: example-gemini-flow
+description: Example flow using the Gemini CLI adapter in AgentFlow
+agent:
+  adapter: gemini
+  prompt: |
+    Create a short two-step flow that prints "hello" and then prints "ok".
+  config:
+    # Optionally pass adapter-specific flags here (the adapter uses extra_args
+    # passed to the CLI invocation). This is adapter/CLI specific.
+    extra_args: ["--temperature", "0.2"]

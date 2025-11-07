@@ -31,6 +31,8 @@ class Settings:
     approval_policy: str = "on-request"
     copilot_cli_path: str = "copilot"
     copilot_token: Optional[str] = None
+    gemini_cli_path: str = "gemini"
+    gemini_api_key: Optional[str] = None
 
     @classmethod
     def from_env(
@@ -66,6 +68,8 @@ class Settings:
         approval = environ.get("AGENTFLOW_APPROVAL_POLICY", "on-request")
         copilot_path = environ.get("AGENTFLOW_COPILOT_PATH", "copilot")
         copilot_token = environ.get("AGENTFLOW_COPILOT_TOKEN")
+        gemini_path = environ.get("AGENTFLOW_GEMINI_PATH", "gemini")
+        gemini_api_key = environ.get("AGENTFLOW_GEMINI_API_KEY")
 
         return cls(
             openai_api_key=api_key,
@@ -75,4 +79,6 @@ class Settings:
             approval_policy=approval,
             copilot_cli_path=copilot_path,
             copilot_token=copilot_token,
+            gemini_cli_path=gemini_path,
+            gemini_api_key=gemini_api_key,
         )

@@ -5,6 +5,7 @@ Adapter implementations that integrate external systems with AgentFlow.
 from .codex_cli import CodexCLIAdapter, CodexCLIError, CodexResult
 from .copilot_cli import CopilotCLIAdapter, CopilotCLIError, CopilotResult
 from .mock_adapter import MockAdapter, MockAdapterError, MockResult
+from .gemini_cli import GeminiCLIAdapter, GeminiCLIError, GeminiResult
 
 __all__ = [
     "CodexCLIAdapter",
@@ -16,4 +17,7 @@ __all__ = [
     "MockAdapter",
     "MockAdapterError",
     "MockResult",
+    "GeminiCLIAdapter",
+    "GeminiCLIError",
+    "GeminiResult",
 ]

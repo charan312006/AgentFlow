@@ -1,0 +1,58 @@
+schema_version: "1.0"
+plan_id: gemini-demo-20251107
+name: Gemini Adapter Demo Flow
+status: completed
+created_at: "2025-11-07T10:30:00Z"
+last_updated: "2025-11-07T10:30:15Z"
+tags:
+  - demo
+  - gemini-adapter
+  - test
+metrics:
+  total_duration_seconds: 15.2
+  total_tokens: 150
+nodes:
+  - id: task-001
+    type: agent_task
+    summary: Generate a two-step greeting flow
+    status: completed
+    depends_on: []
+    inputs:
+      prompt: "Create a short two-step flow that prints 'hello' and then prints 'ok'."
+    outputs:
+      message: |
+        Here is a simple two-step flow:
+        
+        Step 1: Print "hello" to console
+        Step 2: Print "ok" to console
+        
+        This flow demonstrates a basic sequential execution pattern.
+      synopsis: Generated a two-step greeting flow with hello and ok outputs
+      raw: |
+        {"type": "flow", "steps": [{"id": "step1", "action": "print", "value": "hello"}, {"id": "step2", "action": "print", "value": "ok"}]}
+      evaluation:
+        score: 0.92
+        justification: "Flow is simple, clear, and meets the requirements. Both steps are well-defined."
+        raw_message: "Evaluation: The generated flow correctly implements the requested two-step process."
+    artifacts:
+      - type: code
+        name: flow_definition.json
+        path: sandbox/flow_definition.json
+    metrics:
+      input_tokens: 25
+      output_tokens: 125
+      duration_seconds: 15.2
+      evaluation_score: 0.92
+    timeline:
+      started_at: "2025-11-07T10:30:00Z"
+      completed_at: "2025-11-07T10:30:15Z"
+    history:
+      - timestamp: "2025-11-07T10:30:00Z"
+        event: task_started
+        details: Invoking Gemini adapter
+      - timestamp: "2025-11-07T10:30:10Z"
+        event: response_received
+        details: Received flow specification from Gemini
+      - timestamp: "2025-11-07T10:30:15Z"
+        event: task_completed
+        details: Flow generation completed successfully
